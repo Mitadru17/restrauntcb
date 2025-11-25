@@ -53,7 +53,7 @@ const Chat: React.FC = () => {
 
   const fetchMenu = async () => {
     try {
-      const response = await fetch('http://localhost:5001/api/menu');
+      const response = await fetch('https://restrauntcb.onrender.com/api/menu');
       const data = await response.json();
       setMenu(data);
     } catch (error) {
@@ -70,7 +70,7 @@ const Chat: React.FC = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('http://localhost:5001/api/chat', {
+      const response = await fetch('https://restrauntcb.onrender.com/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: input }),
@@ -122,7 +122,7 @@ const Chat: React.FC = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:5001/api/checkout', {
+      const response = await fetch('https://restrauntcb.onrender.com/api/checkout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ items: cart, total: cartTotal }),
